@@ -1,0 +1,9 @@
+*.Identifier
+
+# code running files
+*tempCodeRunnerFile.cpp
+*tempCodeRunnerFile.hpp
+*.o
+*.exe
+
+
