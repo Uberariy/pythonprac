@@ -7,7 +7,5 @@ def calc(s, t ,u):
 		return(c(a(x), b(x)))
 	return fun
 	
-	
-	
-F = calc("sin(x)**2", "cos(x)**2", "x+y")
-print(F(123))
+F = calc(*eval(input()))
+print(F(eval(input())))
