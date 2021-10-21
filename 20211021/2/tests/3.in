@@ -1,0 +1,4 @@
+:constN x 100
+constN 23
+constN "sd"
+quit quit
