@@ -1,4 +1,6 @@
-:constN x 100
-constN 23
-constN "sd"
-quit quit
+:sin x sin(x)
+sin 1
+:decorate s "--<<{}>>--".format(s)
+decorate "ЖЖЖ"
+sin 2
+quit "{}:{}"
