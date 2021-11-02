@@ -6,5 +6,5 @@ def genfib(m, n):
 			yield a
 		b, a = a, a+b
 
-g = genfib(2, 4)
-print(list(g))
+import sys
+exec(sys.stdin.read())

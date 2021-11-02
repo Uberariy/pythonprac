@@ -1,0 +1,1 @@
+print("ЫЫЫЫ", list(genfib(2, 4)))
