@@ -1,4 +1,11 @@
 "Testing script for pythonprac (2021y)"
+"""
+1. Clone pythonprac in ~/; 
+2. Put script in ~/pythonprac; 
+3. Put checkerNN.py in ~/pythonprac;
+4. Execute!
+"""
+
 import os
 for i in os.listdir('.'):
     if str(i)[:4] == "2021":
