@@ -9,5 +9,5 @@ for i in product('TOR', repeat=n-6):
         o = "".join(i)
         if len("".join(o.split("TOR"))) == n-6:
             s.add(o)
-print(*s, sep=", ")
+print(*sorted(s), sep=", ")
 

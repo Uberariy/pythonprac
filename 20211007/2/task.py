@@ -11,5 +11,7 @@ def SUB(a, b):
 				L.append(i)
 		return type(a)(L)
 	
-a, b = eval(input())
-print(SUB(a, b))
+import sys
+exec(sys.stdin.read())
+#a, b = eval(input())
+#print(SUB(a, b))

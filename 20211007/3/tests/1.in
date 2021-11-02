@@ -1,1 +1,1 @@
-"z", "abcdfghklmoprsyz"
+print(Bisect("z", "abcdfghklmoprsyz"))

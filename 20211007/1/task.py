@@ -11,7 +11,8 @@ def Pareto(*l):
 				continue
 		if a == 1:
 			M.append(ab)
-	return(tuple(M))
+	return tuple(M)
 
-print(Pareto(*(eval(input()))))
+import sys
+exec(sys.stdin.read())
 

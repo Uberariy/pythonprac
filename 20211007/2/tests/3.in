@@ -1,1 +1,1 @@
-["AB", "C", "DDD", "DDDDDD"], ["C", "DDDDDD"]
+print(SUB(["AB", "C", "DDD", "DDDDDD"], ["C", "DDDDDD"]))

@@ -1,5 +1,5 @@
 from math import *
-def calc(s, t ,u):
+def Calc(s, t ,u):
 	a = lambda x: eval(s)
 	b = lambda x: eval(t)
 	c = lambda x, y: eval(u)
@@ -7,5 +7,7 @@ def calc(s, t ,u):
 		return(c(a(x), b(x)))
 	return fun
 	
-F = calc(*eval(input()))
-print(F(eval(input())))
+import sys
+exec(sys.stdin.read())
+#F = calc(*eval(input()))
+#print(F(eval(input())))

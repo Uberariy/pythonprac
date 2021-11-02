@@ -1,5 +1,4 @@
 import fractions
-
 def fun(l):
 	s = fractions.Fraction(l[0])
 	w = fractions.Fraction(l[1])
