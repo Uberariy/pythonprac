@@ -1,0 +1,4 @@
+a: 40000, b: 42
+<class 'AttributeError'>
+a: 20000, b: 22
+<class 'AttributeError'>
