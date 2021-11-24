@@ -9,11 +9,11 @@ class Alpha:
 		for i, j in kwargs.items():
 			setattr(self, i, j)
 
-class A:
+class DDF943PDS4321:
 	def __init__(self, *args, **kwargs):
 		pass
 	pass	
-class AlphaQ(A):
+class AlphaQ(DDF943PDS4321):
 	def __str__(self):
 		return ", ".join([str(i)+": "+str(getattr(self, i, None)) for i in string.ascii_lowercase if getattr(self, i, None) != None])
 			
@@ -27,7 +27,7 @@ class AlphaQ(A):
 	def __setattr__(self, obj, val):
 		if obj in [*string.ascii_lowercase]+["obj"]:
 			if getattr(self, obj, None) != val:
-				super(A, self).__setattr__(obj, val)
+				super(DDF943PDS4321, self).__setattr__(obj, val)
 		else:
 			self.obj # Raise AttributeError
 
