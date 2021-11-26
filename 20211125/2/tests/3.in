@@ -1,13 +1,1 @@
-class Cd:
-        num = Num()
-        num2 = Num()
-
-print(Cd().num+Cd().num2)
-c = Cd()
-c.num = c.num2 = 7
-print(c.num+c.num2)
-c.num2 = ""
-print(c.num+c.num2)
-c.num = range(10, 10000, 19)
-print(c.num+c.num2)
-
+Êîðåöêèé Àðòåìèé Êèëîòîí Çà÷åì ïîáåæàë
