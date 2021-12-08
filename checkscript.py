@@ -7,8 +7,8 @@
 """
 
 import os
-upgradedir = ['20211021', '20210923', '20211202']
-readydir = ['20210916', '20211007']
+upgradedir = ['20211021', '20210923', '20211202', '20211111']
+readydir = ['20210916', '20211007', '20210930', '20211125', '20211118', '20211028']
 for i in os.listdir('.'):
     if str(i)[:4] == "2021" and str(i)[:8] not in readydir and str(i)[:8] not in upgradedir:
         for j in range(1, 4):
