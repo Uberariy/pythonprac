@@ -1,15 +1,15 @@
-import fractions
-def fun(l):
-	s = fractions.Fraction(l[0])
-	w = fractions.Fraction(l[1])
+from fractions import *
+def Counter(*l):
+	s = Fraction(l[0])
+	w = Fraction(l[1])
 	adeg = int(l[2])
 	acoef = []
 	for i in range(3,4+adeg):
-		acoef += [fractions.Fraction(l[i])]
+		acoef += [Fraction(l[i])]
 	bdeg = int(l[4+adeg])
 	bcoef = []
 	for i in range(5+adeg,6+adeg+bdeg):
-		bcoef += [fractions.Fraction(l[i])]
+		bcoef += [Fraction(l[i])]
 
 	#print([s, w], "\n", [adeg, bdeg], "\n", acoef, "\n", bcoef)
 	for i in range(adeg+1):
@@ -22,7 +22,8 @@ def fun(l):
 		return False
 	return sum(acoef)/sum(bcoef) == w
 	
-ssstr = input()
-l = ssstr.split(",")
-print(fun(l))
-	
+#ssstr = input()
+#l = ssstr.split(",")
+#print(fun(l))
+import sys
+exec(sys.stdin.read())
