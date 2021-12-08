@@ -1,1 +1,1 @@
-print(*list(genfib(0, 2000)))
+print(*list(fib(0, 2000)))
