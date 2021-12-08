@@ -1,10 +1,10 @@
 <p align="center"><img width=60% src="msu3D.png"></p>
 
 <p align="center">
-    <img src="https://img.shields.io/github/languages/count/Uberariy/PRAC-Okonishnikov"> 
-    <img src="https://img.shields.io/github/repo-size/Uberariy/PRAC-Okonishnikov"> 
-    <img src="https://img.shields.io/github/last-commit/Uberariy/PRAC-Okonishnikov"> 
-    <img src="https://img.shields.io/github/commit-activity/m/Uberariy/PRAC-Okonishnikov">
+    <img src="https://img.shields.io/github/languages/count/Uberariy/pythonprac"> 
+    <img src="https://img.shields.io/github/repo-size/Uberariy/pythonprac"> 
+    <img src="https://img.shields.io/github/last-commit/Uberariy/pythonprac"> 
+    <img src="https://img.shields.io/github/commit-activity/m/Uberariy/pythonprac">
 
 </p>
 
