@@ -1,5 +1,5 @@
 from fractions import *
-def Counter(*l):
+def Counter(l):
 	s = Fraction(l[0])
 	w = Fraction(l[1])
 	adeg = int(l[2])
@@ -22,8 +22,6 @@ def Counter(*l):
 		return False
 	return sum(acoef)/sum(bcoef) == w
 	
-#ssstr = input()
-#l = ssstr.split(",")
-#print(fun(l))
-import sys
-exec(sys.stdin.read())
+ssstr = input()
+l = ssstr.split(",")
+print(Counter(l))
