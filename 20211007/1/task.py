@@ -13,6 +13,6 @@ def Pareto(*l):
 			M.append(ab)
 	return tuple(M)
 
-import sys
-exec(sys.stdin.read())
-
+#import sys
+#exec(sys.stdin.read())
+print(Pareto(*eval(input())))

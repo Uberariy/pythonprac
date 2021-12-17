@@ -7,7 +7,7 @@ def Calc(s, t ,u):
 		return(c(a(x), b(x)))
 	return fun
 	
-import sys
-exec(sys.stdin.read())
-#F = calc(*eval(input()))
-#print(F(eval(input())))
+#import sys
+#exec(sys.stdin.read())
+F = Calc(*eval(input()))
+print(F(eval(input())))

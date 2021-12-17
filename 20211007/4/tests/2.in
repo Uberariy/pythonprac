@@ -1,3 +1,2 @@
-F = Calc("x*x", "x*x*x*x", "x*x+y")
-print(F(2))
-print(F(20))
+"x*x", "x*x*x*x", "x*x+y"
+2

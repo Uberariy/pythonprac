@@ -1,3 +1,2 @@
-F = Calc("sin(x)**2", "cos(x)**2", "x+y")
-print(F(123))
-print(F(1))
+"sin(x)**2", "cos(x)**2", "x+y"
+123

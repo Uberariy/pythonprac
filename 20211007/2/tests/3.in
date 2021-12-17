@@ -1,1 +1,1 @@
-print(SUB(["AB", "C", "DDD", "DDDDDD"], ["C", "DDDDDD"]))
+["AB", "C", "DDD", "DDDDDD"], ["C", "DDDDDD"]

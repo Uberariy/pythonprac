@@ -4,13 +4,7 @@ N = l[0]
 o = l[0:1]
 l = l[1:]
 
-seg = len(l)/N 
-if seg > len(l)//N:
-	seg = int(seg//1) + 1
-else:
-	seg = int(seg)
-
-s = sorted([l[i:i+seg] for i in range(0, seg*N, seg)])
+s = sorted([l[i*len(l)//N:(i+1)*len(l)//N] for i in range(0, N, 1)])
 
 sys.stdout.buffer.write(o)
 for i in s:

@@ -7,7 +7,7 @@ while True:
 	if l[0][0] == ":":
 		d[l[0][1::]] = l[1::]
 	elif l[0] == "quit":
-		print(l[1].format(len(d)+1, count))
+		print(eval(l[1].format(len(d)+1, count)))
 		break
 	else:
 		if len(l[1::]) == 0:
