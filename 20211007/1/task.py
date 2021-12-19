@@ -11,6 +11,8 @@ def Pareto(*l):
 				continue
 		if a == 1:
 			M.append(ab)
+	if not isinstance(M[0], tuple):
+		return (tuple(M), )
 	return tuple(M)
 
 #import sys
