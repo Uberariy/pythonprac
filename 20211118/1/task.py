@@ -2,7 +2,10 @@ def objcount(cls):
 	class declass(cls):
 		counter = 0
 		def __init__(self, *args, **kwargs):
-			super().__init__(*args, **kwargs)
+			try:
+				super().__init__(*args, **kwargs)
+			except Exception:
+				super().__init__()
 			declass.counter += 1
 	
 		def __del__(self):

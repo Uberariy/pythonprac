@@ -4,7 +4,8 @@ class Num:
 		return getattr(obj, "val", 0)
 	def __set__(self, obj, value):
 		try:
-			obj.val = value.real
+			value.real
+			obj.val = value
 		except Exception:
 			obj.val = len(value)
 		return

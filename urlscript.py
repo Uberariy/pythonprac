@@ -14,6 +14,8 @@ readydir = ['20211028', '20210916', '20211014', '20211111', '20210923', '2021111
 for i in os.listdir('.'):
     if str(i)[:4] == "2021":# and str(i)[:8] not in readydir and str(i)[:8] not in upgradedir:
         for j in range(1, 5):
+            if str(i)[:8] == '20211014' and j == 2:
+                continue
             print("dir: "+i+", program with url:", j)
             os.system("touch ~/pythonprac/"+i+"/"+str(j)+"/urls")
             os.system("echo https://git.cs.msu.ru/s02190234/pythonprac2021/-/tree/main/"+i+"/"+str(j)+"/tests > ~/pythonprac/"+i+"/"+str(j)+"/urls")
