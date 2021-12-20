@@ -19,4 +19,5 @@ for i in os.listdir('.'):
             print("dir: "+i+", program with url:", j)
             os.system("touch ~/pythonprac/"+i+"/"+str(j)+"/urls")
             os.system("echo https://git.cs.msu.ru/s02190234/pythonprac2021/-/tree/main/"+i+"/"+str(j)+"/tests > ~/pythonprac/"+i+"/"+str(j)+"/urls")
+            os.system("echo https://git.cs.msu.ru/s02190141/pythonprac-2021/-/tree/main/"+i+"/"+str(j)+"/tests >> ~/pythonprac/"+i+"/"+str(j)+"/urls")
             os.system("echo https://github.com/stamplevskiyd/pythonprac-2021/tree/main/"+i+"/"+str(j)+"/tests >> ~/pythonprac/"+i+"/"+str(j)+"/urls")
