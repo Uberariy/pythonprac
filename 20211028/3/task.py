@@ -11,4 +11,6 @@ if n >= 6:
             if len("".join(o.split("TOR"))) == n-6:
                 s.add(o)
     print(*sorted(s), sep=", ")
+else:
+    print("")
 

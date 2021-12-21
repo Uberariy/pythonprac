@@ -14,5 +14,4 @@ while True:
             d.setdefault(i.lower(), 0)
             d[i.lower()] += 1
 
-if d:
-    print(" ".join([i for i in d if d[i]==d[max(d, key=d.get)]]))
+print(" ".join([i for i in d if d[i]==d[max(d, key=d.get)]]))
