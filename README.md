@@ -15,3 +15,4 @@
 
 #
 ### Страница Курса: http://uneex.ru/LecturesCMC/PythonIntro2021
+### Страница Курса: http://uneex.ru/LecturesCMC/PythonDevelopment2022/Prac
