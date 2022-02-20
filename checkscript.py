@@ -7,14 +7,18 @@
 """
 
 import os
-upgradedir = ['20211021', '20210923', '20211202', '20211111']
-readydir = ['20210916', '20211007', '20210930', '20211125', '20211118', '20211028']
+
+upgradedir = []
+readydir = ['20211028', '20210916', '20211014', '20211111', '20210923', '20211118', '20211021', '20210930', '20211213', '20211125']
+
 for i in os.listdir('.'):
-    if str(i)[:4] == "2021" and str(i)[:8] not in readydir and str(i)[:8] not in upgradedir:
-        for j in range(1, 4):
+    if str(i)[:4] == "2021":# and str(i)[:8] not in readydir and str(i)[:8] not in upgradedir:
+        for j in range(1, 5):
             print("dir: "+i+", program:", j)
             # Following two lines process execution (commend them, if u want to avoid it)
             for k in range(1, 4):
-                os.system("python3 ~/pythonprac/"+i+"/"+str(j)+"/task.py < ~/dimast/"+i+"/"+str(j)+"/tests/"+str(k)+".in > ~/pythonprac/"+i+"/"+str(j)+"/tests/"+str(k)+".out;")
+                os.system("python3 ~/pythonprac/"+i+"/"+str(j)+"/task.py < ~/pythonprac/"+i+"/"+str(j)+"/tests/"+str(k)+".in > ~/pythonprac/"+i+"/"+str(j)+"/tests/"+str(k)+".out;")
             # Following line process testing (commend it, if u want to avoid testing)
-            os.system("python3 checkerNN.py ~/pythonprac/"+i+"/"+str(j)+"/task.py ~/dimast/"+i+"/"+str(j)+"/tests")
+            if str(i)[:8] == '20211014' and j == 2:
+                continue
+            os.system("python3 checkerNN.py ~/pythonprac/"+i+"/"+str(j)+"/task.py ~/pythonprac/"+i+"/"+str(j)+"/tests")
