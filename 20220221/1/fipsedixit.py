@@ -1,7 +1,7 @@
 from ipsedixit import Generator, parse_args
 import sys
 
-if (len(sys.argv) > 2) and (sys.argv[2][0] != '-'):
+if (sys.argv[1][0] != '-') and (len(sys.argv) > 2) and (sys.argv[2][0] != '-'):
     bpath = sys.argv[2]
     sys.argv.pop(2)
     if (bpath not in ('caesar', 'tacitus')):
