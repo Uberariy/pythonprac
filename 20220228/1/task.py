@@ -11,7 +11,7 @@ def dist(s1, s2, m):
 
 s1, s2, m = str(input()), str(input()), str(input())
 pool = mp.Pool(1)
-process = pool.apply_async(dist(s1, s2, m), (1,))
+process = pool.apply_async(dist, (s1, s2, m,))
 try:
 	res = process.get(timeout=1)
 except mp.context.TimeoutError:
