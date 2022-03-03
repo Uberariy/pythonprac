@@ -1,3 +1,4 @@
+import multiprocessing as mp
 import textdistance
 
 def dist(s1, s2, m):
@@ -9,4 +10,10 @@ def dist(s1, s2, m):
         return -1
 
 s1, s2, m = str(input()), str(input()), str(input())
-res = dist(s1, s2, m)
+pool = mp.Pool(1)
+process = pool.apply_async(dist(s1, s2, m), (1,))
+try:
+	res = process.get(timeout=1)
+except mp.context.TimeoutError:
+	res = -1
+print(res)
