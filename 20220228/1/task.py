@@ -10,3 +10,4 @@ def dist(s1, s2, m):
 
 s1, s2, m = str(input()), str(input()), str(input())
 res = dist(s1, s2, m)
+print(res)
