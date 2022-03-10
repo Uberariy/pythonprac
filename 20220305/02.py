@@ -2,8 +2,6 @@ import readline
 import shlex
 import cmd
 
-from sklearn.preprocessing import power_transform
-
 class repl(cmd.Cmd):
     prompt = "> "
 
