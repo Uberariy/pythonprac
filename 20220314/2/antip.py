@@ -5,10 +5,12 @@ import difflib
 import textdistance
 
 def product(text):
+    text = re.sub(r"#[^\n]*\n", r"\n", text)
     tree = ast.parse(ast.unparse(ast.parse(text)))
     prod = ast.dump(ast.NodeTransformer().generic_visit(tree), annotate_fields=False)
-    prod = re.sub(r"\s", r"", prod)
-    prod = re.sub(r"([A-Z][a-z]+)+\(", r"_(", prod)
+    prod = re.sub(r"(\s)", r"", prod)
+    prod = re.sub(r"\'[^\']*\'", r"", prod)
+    prod = re.sub(r"\"[^\"]*\"", r"", prod)
     return prod
 
 if __name__ == '__main__':
