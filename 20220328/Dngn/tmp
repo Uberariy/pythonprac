@@ -14,11 +14,10 @@ class Repl(cmd.Cmd):
         if len(args) != 8:
             print("(Not enough/Too many) arguments")
         else:
-            Xy = [int(args[args.index("coords")+1]), int(args[args.index("coords")+2])]
-            Field[Xy[0]][Xy[1]].addmonstr(args[args.index("name")+1],
-                                          int(args[args.index("hp")+1]))
-            print("Added {} at ({}, {}) hp {}".format(args[args.index("name")+1],
-                                                      Xy[0], Xy[1], args[args.index("hp")+1]))
+            Field[int(args[args.index("coords")+1])][int(args[args.index("coords")+2])
+                                                     ].addmonstr(args[args.index("name")+1], int(args[args.index("hp")+1]))
+            print("Added {} at ({}, {}) hp {}".format(args[args.index(
+                "name")+1], args[args.index("coords")+1], args[args.index("coords")+2], args[args.index("hp")+1]))
 
     def complete_add(self, text, allcommand, beg, end):
         return [s for s in ["monster", ] if s.startswith(text)]
@@ -63,24 +62,25 @@ class Repl(cmd.Cmd):
 
     def do_attack(self, arg):
         args = shlex.split(arg, comments=True)
-        PlField = Field[Pl1.coords[0]][Pl1.coords[1]]
-        monstershere = [i.name for i in PlField.monsters]
+        monstershere = [i.name for i in Field[Pl1.coords[0]]
+                        [Pl1.coords[1]].monsters]
         if len(args) != 1:
             print("(Not enough/Too many) arguments")
         elif args[0] in monstershere:
-            PlField.monsters[monstershere.index(args[0])].hp -= 10
-            if (PlField.monsters[monstershere.index(args[0])].hp <= 0):
+            Field[Pl1.coords[0]][Pl1.coords[1]
+                                 ].monsters[monstershere.index(args[0])].hp -= 10
+            if (Field[Pl1.coords[0]][Pl1.coords[1]].monsters[monstershere.index(args[0])].hp <= 0):
                 print(f"{args[0]} dies!")
-                PlField.monsters.pop(monstershere.index(args[0]))
+                Field[Pl1.coords[0]][Pl1.coords[1]].monsters.pop(
+                    monstershere.index(args[0]))
             else:
-                monstrhp = PlField.monsters[monstershere.index(args[0])].hp
-                print(f"{args[0]} lost 10 hp, now has {monstrhp} hp")
+                print(
+                    f"{args[0]} lost 10 hp, now has {Field[Pl1.coords[0]][Pl1.coords[1]].monsters[monstershere.index(args[0])].hp} hp")
         else:
             print(f"No {args[0]} here")
 
     def complete_attack(self, text, allcommand, beg, end):
-        PlField = Field[Pl1.coords[0]][Pl1.coords[1]]
-        return [s for s in [i.name for i in PlField.monsters] if s.startswith(text)]
+        return [s for s in [i.name for i in Field[Pl1.coords[0]][Pl1.coords[1]].monsters] if s.startswith(text)]
 
     def do_q(self, arg):
         print("Exiting!")
