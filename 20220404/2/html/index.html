@@ -1,0 +1,242 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Добро Пожаловать в документацию Муд! &#8212; No project 0.001 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="id1">
+<h1>Добро Пожаловать в документацию Муд!<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>Имеется <a class="reference internal" href="#target-to-paragraph"><span class="std std-ref">техническая документация</span></a> для продвинутых пользователей ПК.</p>
+<dl>
+<dt><em>Задача_1</em>: напишите программу, реализующую простейший ‘’multi-user dungeon’’</dt><dd><ul class="simple">
+<li><p>имеется поле 10х10 клеток (по каждой оси нумерация с 0 по 9); рисовать поле и его наполнение - не нужно</p></li>
+<li><p>в каждой клетке может находиться 0 или более монстров, у каждого монстра есть имя и число очков здоровья (hp - hit points)</p></li>
+<li><p>по полю ходит игрок; попав на клетку с монстром, он может его атаковать, нанося урон (списывая очки здоровья)</p></li>
+<li><p>в начале игры игрок появляется в случайной клетке (0, 0)</p></li>
+<li><p>клетка с координатами (0, 0) находится в левом верхнем углу поля</p></li>
+<li><p>настройка поля и игровой процесс организованы при помощи командной строки (readline/shlex/cmd); должен поддерживаться следующий командный язык:</p></li>
+</ul>
+<blockquote>
+<div><ul>
+<li><p>add monster name &lt;имя монстра&gt; hp &lt;число очков здоровья&gt; coords &lt;X&gt; &lt;Y&gt;
+* добавить в клетку с заданными координатами монстра с заданным именем и числом очков здоровья
+* если в этой клетке уже есть монстр с таким именем, его число очков здоровья меняется на новое
+* пример: add monster name Gnoll hp 23 coords 5 7
+* пример (чтобы работал shlex): add monster name “War Troll” hp 100 coords 4 2</p></li>
+<li><p>show monsters
+* вывести про каждого монстра на отдельной строке информацию: его имя, координаты, число очков здоровья
+* пример: War Troll at (4 2) hp 100</p></li>
+<li><p>move &lt;направление&gt;
+* подвинуть игрока на одну клетку в заданном направлении (варианты: up, down, left, right), если это возможно с учетом границ поля; up, down - смещение по оси Y; left, right - по оси X
+* пример: move up
+* после подвижки (т.е. успешного изменения позиции) вывести информацию о новой позиции, например: player at 6 9; если подвижка невозможна, вывести: cannot move
+* если после подвижки игрок попал на клетку с монстром, вывести информацию о монстре (монстрах) в этой клетке, например: encountered: War Troll 57 hp, Lizardman 13 hp</p></li>
+<li><p>attack &lt;имя монстра&gt;
+* атаковать монстра с заданным именем, находящегося в той же клетке, где игрок
+* атака списывает у монстра 10 очков здоровья; по результатам выводится сообщение:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>если у монстра осталось положительное число очков здоровья: &lt;имя монстра&gt; lost 10 hp, now has &lt;число&gt; hp</p></li>
+<li><p>если у монстра осталось 0 или менее очков здоровья (традиция допускает “уход в минус”), то: &lt;имя монстра&gt; dies</p></li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li><p>монстр, у которого в результате атаки осталось 0 или менее очков здоровья, исчезает</p></li>
+<li><p>если монстра с заданными именем нет в клетке с игроком, выводится сообщение: no &lt;имя монстра&gt; here</p></li>
+</ul>
+</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li><p>автодополнение должно работать:</p></li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li><p>для основного имени команды (add, show и т.п.)</p></li>
+<li><p>для направления в команде move</p></li>
+<li><p>для имени монстра, находящегося в клетке с игроком - например, введя attack и нажимая TAB, пользователь может перебирать имена монстров в текущей клетке; при этом имена, содержащие пробелы, должны перебираться с экранированными пробелами</p></li>
+</ul>
+</div></blockquote>
+</dd>
+</dl>
+</section>
+<section id="target-to-paragraph">
+<span id="id2"></span><h1>Техническая документация:<a class="headerlink" href="#target-to-paragraph" title="Permalink to this headline">¶</a></h1>
+<section id="module-Dngn.gamecmd">
+<span id="gamecmd-py"></span><h2>Gamecmd.py:<a class="headerlink" href="#module-Dngn.gamecmd" title="Permalink to this headline">¶</a></h2>
+<p>Содержимое этого файла в основном используется для работы с интеративной командной 
+строкой.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="Dngn.gamecmd.Repl">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Dngn.gamecmd.</span></span><span class="sig-name descname"><span class="pre">Repl</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">completekey</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'tab'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stdin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stdout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Dngn.gamecmd.Repl" title="Permalink to this definition">¶</a></dt>
+<dd><p>Класс интерактивной коммандной строки</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="Dngn.gamecmd.Repl.do_add">
+<span class="sig-name descname"><span class="pre">do_add</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Dngn.gamecmd.Repl.do_add" title="Permalink to this definition">¶</a></dt>
+<dd><p>Добавить в клетку с заданными координатами монстра с заданным именем 
+и числом очков здоровья. Если в этой клетке уже есть монстр с таким именем, 
+его число очков здоровья меняется на новое.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Dngn.gamecmd.Repl.do_attack">
+<span class="sig-name descname"><span class="pre">do_attack</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Dngn.gamecmd.Repl.do_attack" title="Permalink to this definition">¶</a></dt>
+<dd><p>Атаковать монстра с заданным именем, находящегося в той же клетке, где игрок.
+Атака списывает у монстра 10 очков здоровья;</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Dngn.gamecmd.Repl.do_move">
+<span class="sig-name descname"><span class="pre">do_move</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Dngn.gamecmd.Repl.do_move" title="Permalink to this definition">¶</a></dt>
+<dd><p>Подвинуть игрока на одну клетку в заданном направлении 
+(варианты: up, down, left, right), если это возможно с учетом границ поля; 
+up, down - смещение по оси Y; left, right - по оси X</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Dngn.gamecmd.Repl.do_q">
+<span class="sig-name descname"><span class="pre">do_q</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Dngn.gamecmd.Repl.do_q" title="Permalink to this definition">¶</a></dt>
+<dd><p>Экзитскам.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Dngn.gamecmd.Repl.do_show">
+<span class="sig-name descname"><span class="pre">do_show</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Dngn.gamecmd.Repl.do_show" title="Permalink to this definition">¶</a></dt>
+<dd><p>Вывести про каждого монстра на отдельной строке информацию: его имя, 
+координаты, число очков здоровья.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-Dngn.gameobjects">
+<span id="gameobjects-py"></span><h2>Gameobjects.py:<a class="headerlink" href="#module-Dngn.gameobjects" title="Permalink to this headline">¶</a></h2>
+<p>Данный файл определяет работу с геймобджектами Муда.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="Dngn.gameobjects.Cage">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Dngn.gameobjects.</span></span><span class="sig-name descname"><span class="pre">Cage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">monstr_count</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Dngn.gameobjects.Cage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Класс клетки (связаны) - минимального мерила игрового пространства.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="Dngn.gameobjects.Cage.addmonstr">
+<span class="sig-name descname"><span class="pre">addmonstr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hp</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Dngn.gameobjects.Cage.addmonstr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Подселить товарища-друга в клетку игрового пространства.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="Dngn.gameobjects.Monster">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Dngn.gameobjects.</span></span><span class="sig-name descname"><span class="pre">Monster</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">15</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Dngn.gameobjects.Monster" title="Permalink to this definition">¶</a></dt>
+<dd><p>Класс монстра, блуждающего в поисках нуба.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="Dngn.gameobjects.Player">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Dngn.gameobjects.</span></span><span class="sig-name descname"><span class="pre">Player</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coords</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[0,</span> <span class="pre">0]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Dngn.gameobjects.Player" title="Permalink to this definition">¶</a></dt>
+<dd><p>Класс игрока - юзера приложения.</p>
+</dd></dl>
+
+<div class="toctree-wrapper compound">
+</div>
+</section>
+</section>
+<section id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="#">No project</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="#">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2022, Me.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.5.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
