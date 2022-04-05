@@ -1,4 +1,7 @@
+"""Данный файл определяет работу с геймобджектами Муда."""
+
 class Player:
+    """Класс игрока - юзера приложения."""
     coords = []
 
     def __init__(self, coords=[0, 0]):
@@ -6,6 +9,7 @@ class Player:
 
 
 class Monster:
+    """Класс монстра, блуждающего в поисках нуба."""
     name = 0
     hp = 0
 
@@ -15,6 +19,7 @@ class Monster:
 
 
 class Cage:
+    """Класс клетки (связаны) - минимального мерила игрового пространства."""
     monsters = []   # Better use ditctionary
 
     def __init__(self, monstr_count):
@@ -22,6 +27,7 @@ class Cage:
         pass
 
     def addmonstr(self, name, hp):
+        """Подселить товарища-друга в клетку игрового пространства."""
         for ind, i in enumerate(self.monsters):
             if i.name == name:
                 self.monsters.pop(ind)

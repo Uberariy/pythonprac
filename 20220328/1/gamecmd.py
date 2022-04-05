@@ -1,3 +1,7 @@
+"""Содержимое этого файла в основном используется для работы с интеративной командной 
+строкой.
+"""
+
 import shlex
 import cmd
 from .gameobjects import Cage, Player
@@ -7,9 +11,14 @@ Pl1 = Player()
 
 
 class Repl(cmd.Cmd):
+    """Класс интерактивной коммандной строки"""
     prompt = "[DNGN]:~$ "
 
     def do_add(self, arg):
+        """Добавить в клетку с заданными координатами монстра с заданным именем 
+        и числом очков здоровья. Если в этой клетке уже есть монстр с таким именем, 
+        его число очков здоровья меняется на новое.
+        """
         args = shlex.split(arg, comments=True)
         if len(args) != 8:
             print("(Not enough/Too many) arguments")
@@ -24,6 +33,9 @@ class Repl(cmd.Cmd):
         return [s for s in ["monster", ] if s.startswith(text)]
 
     def do_show(self, arg):
+        """Вывести про каждого монстра на отдельной строке информацию: его имя, 
+        координаты, число очков здоровья.
+        """
         args = shlex.split(arg, comments=True)
         if len(args) != 1:
             print("(Not enough/Too many) arguments")
@@ -37,6 +49,10 @@ class Repl(cmd.Cmd):
         return [s for s in ["monsters", ] if s.startswith(text)]
 
     def do_move(self, arg):
+        """Подвинуть игрока на одну клетку в заданном направлении 
+        (варианты: up, down, left, right), если это возможно с учетом границ поля; 
+        up, down - смещение по оси Y; left, right - по оси X
+        """
         args = shlex.split(arg, comments=True)
         if len(args) != 1:
             print("(Not enough/Too many) arguments")
@@ -62,6 +78,9 @@ class Repl(cmd.Cmd):
         return [s for s in ["up", "down", "left", "right"] if s.startswith(text)]
 
     def do_attack(self, arg):
+        """Атаковать монстра с заданным именем, находящегося в той же клетке, где игрок.
+        Атака списывает у монстра 10 очков здоровья;
+        """
         args = shlex.split(arg, comments=True)
         PlField = Field[Pl1.coords[0]][Pl1.coords[1]]
         monstershere = [i.name for i in PlField.monsters]
@@ -83,5 +102,7 @@ class Repl(cmd.Cmd):
         return [s for s in [i.name for i in PlField.monsters] if s.startswith(text)]
 
     def do_q(self, arg):
+        """Экзитскам.
+        """
         print("Exiting!")
         return True
