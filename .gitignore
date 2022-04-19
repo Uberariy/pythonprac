@@ -1,7 +1,7 @@
 *.Identifier
 *__pycache__
 
-# code running files
+# Code running files
 *tempCodeRunnerFile.cpp
 *tempCodeRunnerFile.hpp
 *.o
@@ -9,3 +9,6 @@
 
 # They ruin statistics!!!
 *.ipybn
+
+# For modules implementation
+*__pycache__
