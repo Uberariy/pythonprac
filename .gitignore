@@ -1,4 +1,5 @@
 *.Identifier
+*__pycache__
 
 # code running files
 *tempCodeRunnerFile.cpp
