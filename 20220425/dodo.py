@@ -7,7 +7,7 @@ def task_babel():
     return {
         "actions": [f"pybabel extract -o {podir}/{domain}.pot --input-dirs=.",
                     f"pybabel update -l ru -D {domain} -i {podir}/{domain}.pot -d {podir}",
-                    f"pybabel compile -D {domain} -d {podir}"],
+                    f"pybabel compile -l ru -D {domain} -d {podir}"],
         "file_dep": ["task.py"],
         'targets': [f'{podir}/{domain}.pot', f'{podir}/ru/LC_MESSAGES/{domain}.mo'],
         "clean": True,
