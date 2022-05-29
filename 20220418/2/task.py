@@ -20,15 +20,15 @@ def solveSquare():
             if c == 0:
                 sq.printResult("Any number is solution.")
             else:
-                sq.printResult("No solution!")
+                sq.printResult(None)
         else:
-            sq.printResult(-c / b)
+            sq.printResult((-c / b, -c / b))
     else:
         D = b**2 - 4*a*c 
         if (D >= 0):
             sq.printResult(((-b - D**0.5)/2, (-b + D**0.5)/2))
         else:
-            sq.printResult("No real solution!")
+            sq.printResult(None)
 
 if __name__ == '__main__':
     solveSquare()
